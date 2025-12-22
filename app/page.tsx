@@ -8,6 +8,7 @@ import phoneWhite from "@/images/svg/Phone white.svg";
 import tarievenButton from "@/images/svg/Tarieven.svg";
 import whatsappGreen from "@/images/svg/Whatsapp green.svg";
 import whatsappWhite from "@/images/svg/Whatsapp white.svg";
+export const runtime = "edge";
 
 const accentGreen = "#aef359";
 
