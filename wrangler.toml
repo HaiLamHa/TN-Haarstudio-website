@@ -1,0 +1,4 @@
+name = "tn-haarstudio"
+compatibility_date = "2024-12-01"
+# Use the static export output directory from `npm run build`
+pages_build_output_dir = "./out"

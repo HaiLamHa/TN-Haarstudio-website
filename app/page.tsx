@@ -1,65 +1,190 @@
 import Image from "next/image";
 
+import background from "@/images/background.png";
+import logo from "@/images/svg/Logo.svg";
+import locatieButton from "@/images/svg/Locatie.svg";
+import phoneGreen from "@/images/svg/Phone green.svg";
+import phoneWhite from "@/images/svg/Phone white.svg";
+import tarievenButton from "@/images/svg/Tarieven.svg";
+import whatsappGreen from "@/images/svg/Whatsapp green.svg";
+import whatsappWhite from "@/images/svg/Whatsapp white.svg";
+
+const accentGreen = "#aef359";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-white text-black">
+      <section className="relative w-full min-h-[540px] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={background}
+            alt="Kapsalon achtergrond"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            style={{ filter: "blur(2px)" }}
+          />
+        </div>
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[5px] bg-[color:var(--accent-green)] shadow-[0_8px_18px_-4px_rgba(0,0,0,0.5)]"
+          style={{ ["--accent-green" as string]: accentGreen }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="relative flex w-full flex-col items-center justify-center pb-12 pt-8">
+          <div
+            className="mt-6 w-full overflow-hidden rounded-none bg-white/80 shadow-sm"
+            style={{ ["--accent-green" as string]: accentGreen }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="flex flex-col items-center px-6 pb-4 pt-6">
+              <Image
+                src={logo}
+                alt="TN Haarstudio"
+                className="h-auto w-[168px] sm:w-[192px]"
+                priority
+              />
+              <p
+                className="slogan mt-3 w-full text-center text-[20px] font-semibold text-neutral-900"
+                style={{ fontFamily: "halcom, sans-serif" }}
+              >
+                Uw haar, uw tijd, ook na zonsondergang.
+              </p>
+            </div>
+            <div className="h-[2px] w-full bg-[color:var(--accent-green)]" />
+
+            <div className="mx-auto w-full max-w-3xl px-6">
+              <div className="grid gap-4 py-5 text-[12px] leading-relaxed text-neutral-900 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-6">
+                <div>
+                  <p className="text-[15px] font-semibold">Adres &amp; Contact</p>
+                  <div className="mt-1 space-y-1 text-[15px]">
+                    <p>Maarten van Heemskerkstraat 6</p>
+                    <p>5702XM Helmond</p>
+                    <p>06 - 44545215</p>
+                  </div>
+                </div>
+                <div className="sm:text-right">
+                  <p className="text-[15px] font-semibold">Openingstijden</p>
+                  <div className="mt-1 space-y-1 text-[15px]">
+                    <p>Ma t/m Vr: 18:00 - 21:00</p>
+                    <p>Wo: 9:00 - 21:00</p>
+                    <p>Za: 9:00 - 17:00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="h-[2px] w-full bg-[color:var(--accent-green)]" />
+
+            <div className="mx-auto w-full max-w-3xl px-6">
+              <div className="flex flex-col items-center gap-3 py-5 text-[16px] font-semibold text-neutral-900">
+                <p>Een afspraak maken</p>
+                <div className="flex items-center gap-6">
+                  <a
+                    href="https://wa.me/31644545215"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp 06-44545215"
+                  >
+                    <Image
+                      src={whatsappGreen}
+                      alt="WhatsApp"
+                      className="h-12 w-12 transition-transform duration-200 hover:scale-110"
+                    />
+                  </a>
+                  <a href="tel:0644545215" aria-label="Bel 06-44545215">
+                    <Image
+                      src={phoneGreen}
+                      alt="Telefoon"
+                      className="h-12 w-12 transition-transform duration-200 hover:scale-110"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 pb-12 pt-6 text-[12px] leading-relaxed text-neutral-900">
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex items-center gap-6">
+            <a
+              href="/pdf/Tarieven%20TN%20Haarstudio.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={tarievenButton}
+                alt="Tarieven"
+                className="h-auto w-32 transition-transform duration-200 hover:scale-110"
+                priority
+              />
+            </a>
+            <a
+              href="https://maps.app.goo.gl/bUeLpM3NYYADBavJ6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={locatieButton}
+                alt="Locatie"
+                className="h-auto w-32 transition-transform duration-200 hover:scale-110"
+                priority
+              />
+            </a>
+          </div>
+
+          <div className="mt-4 w-full max-w-2xl space-y-3 text-left text-[15px]">
+            <p className="text-[15px] font-semibold">Vragen of een afspraak maken?</p>
+            <p>Heb je vragen? Neem dan gerust contact met mij op.</p>
+            <p>Een afspraak maken kan telefonisch of via WhatsApp.</p>
+            <div className="space-y-1">
+              <p>Kun je niet (op tijd) komen?</p>
+              <p>Laat het me dan z.s.m weten.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        className="footer-normal mt-6 bg-[color:var(--accent-green)] py-4 text-[14px] text-black"
+        style={{ ["--accent-green" as string]: accentGreen }}
+      >
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-3 px-3 text-center sm:grid-cols-[1fr_auto_1fr] sm:px-6 sm:text-left">
+          <div className="font-semibold sm:text-left">
+            <p>Maarten v. Heemskerkstr 6 | 5702XM Helmond | 06 - 44545215</p>
+            <p className="text-[11px] font-normal">KVK nr: 92045928</p>
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="https://wa.me/31644545215"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp 06-44545215"
+            >
+              <Image
+                src={whatsappWhite}
+                alt="WhatsApp"
+                className="h-11 w-11 transition-transform duration-200 hover:scale-110"
+                priority
+              />
+            </a>
+            <a href="tel:0644545215" aria-label="Bel 06-44545215">
+              <Image
+                src={phoneWhite}
+                alt="Telefoon"
+                className="h-11 w-11 transition-transform duration-200 hover:scale-110"
+                priority
+              />
+            </a>
+          </div>
+
+          <div className="font-semibold sm:text-right">
+            <p>Ma t/m Vr: 18:00 - 21:00 | Wo: 9:00 - 21:00 | Za: 9:00 - 17:00</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
