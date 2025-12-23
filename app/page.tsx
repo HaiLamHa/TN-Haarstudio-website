@@ -8,7 +8,6 @@ import phoneWhite from "@/images/svg/Phone white.svg";
 import tarievenButton from "@/images/svg/Tarieven.svg";
 import whatsappGreen from "@/images/svg/Whatsapp green.svg";
 import whatsappWhite from "@/images/svg/Whatsapp white.svg";
-export const runtime = "edge";
 
 const accentGreen = "#aef359";
 
@@ -110,7 +109,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-6">
             <a
-              href="/pdf/Tarieven%20TN%20Haarstudio.pdf"
+              href="/pdf/tarieven.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
